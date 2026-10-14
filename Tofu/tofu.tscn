@@ -6,9 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qeq5k"]
 size = Vector3(0.6, 1.5, 0.6)
 
-[sub_resource type="BoxMesh" id="BoxMesh_qeq5k"]
+[sub_resource type="BoxMesh" id="BoxMesh_jf38b"]
 material = ExtResource("2_h8pv7")
-size = Vector3(0.6, 1.5, 0.6)
+size = Vector3(0.75, 1.5, 0.75)
 
 [node name="Tofu" type="CharacterBody3D" unique_id=1542248161]
 script = ExtResource("1_hpemb")
@@ -17,9 +17,9 @@ script = ExtResource("1_hpemb")
 shape = SubResource("BoxShape3D_qeq5k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1918256051]
-mesh = SubResource("BoxMesh_qeq5k")
+mesh = SubResource("BoxMesh_jf38b")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=932155180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5476115, -0.08847028)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1450898794]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)

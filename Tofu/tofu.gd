@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 @onready var camera_pivot: Node3D = $CameraPivot
 var mouse_motion:= Vector2.ZERO
 
-@export var aim_sensitivity: float = 0.005
+@export var aim_sensitivity: float = 0.001
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

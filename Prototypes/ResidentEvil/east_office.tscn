@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://blyhh6q45kpi5"]
+
+[ext_resource type="Material" uid="uid://bdx34i4tmxqsh" path="res://Materials/meters_on_boxes.tres" id="1_rshej"]
+
+[node name="EastOffice" type="Node3D" unique_id=150930948]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1257573178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+use_collision = true
+
+[node name="OfficeExterior" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1862084529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0126264095)
+material_override = ExtResource("1_rshej")
+size = Vector3(14.4, 3, 9.152)
+material = ExtResource("1_rshej")
+
+[node name="OfficeInterior" type="CSGBox3D" parent="CSGCombiner3D" unique_id=379512346]
+operation = 2
+size = Vector3(13.4, 3, 8.152)
+material = ExtResource("1_rshej")
+
+[node name="DoorToEastHall" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1565305736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9471183, 0, -1.8833234)
+operation = 2
+size = Vector3(1, 3, 2)
+material = ExtResource("1_rshej")
+
+[node name="DoorToEastHall2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=139562645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.019988, 0, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+material = ExtResource("1_rshej")
+
+[node name="ChiefsOfficeExterior" type="CSGBox3D" parent="CSGCombiner3D" unique_id=41706803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2020187, 0, 2.32828)
+size = Vector3(6, 3, 4.5)
+material = ExtResource("1_rshej")
+
+[node name="ChiefsOfficeInterior" type="CSGBox3D" parent="CSGCombiner3D/ChiefsOfficeExterior" unique_id=912696040]
+operation = 2
+size = Vector3(5, 3, 3.5)
+material = ExtResource("1_rshej")
+
+[node name="DoorToEastHall3" type="CSGBox3D" parent="CSGCombiner3D/ChiefsOfficeExterior" unique_id=2047109708]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.3660026, 0, -1.9966131)
+operation = 2
+size = Vector3(1, 3, 2)
+material = ExtResource("1_rshej")
+
+[node name="DisableWhenInstantiating" type="CSGBox3D" parent="." unique_id=102215834]
+size = Vector3(15, 0.01, 10)

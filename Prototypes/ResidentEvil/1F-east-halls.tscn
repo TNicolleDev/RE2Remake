@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://6cpmnm0ko4wv"]
+
+[node name="Halls" type="Node3D" unique_id=1977596207]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=329252566]
+
+[node name="Exterior" type="CSGBox3D" parent="CSGCombiner3D" unique_id=938552866]
+size = Vector3(4, 3, 20)
+
+[node name="Exterior2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1301091837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8)
+size = Vector3(10, 3, 4)
+
+[node name="Exterior3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=176872834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -2.245)
+size = Vector3(25, 3, 4)
+
+[node name="Exterior4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1679924714]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.713, 0, -9)
+size = Vector3(10, 3, 4)
+
+[node name="Exterior5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=650625496]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 0, 4.8092327)
+size = Vector3(11, 3, 5)
+
+[node name="Exterior6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2141072807]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26, 0, 8)
+size = Vector3(11, 3, 5)
+
+[node name="Interior" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1218078735]
+operation = 2
+size = Vector3(3, 3, 19)
+
+[node name="Interior2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=495813757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8)
+operation = 2
+size = Vector3(9, 3, 3)
+
+[node name="Interior3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=341581275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.623535, 0, -2.245)
+operation = 2
+size = Vector3(24.75293, 3, 3)
+
+[node name="Interior4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1548732273]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.713, 0, -8.375061)
+operation = 2
+size = Vector3(10.249878, 3, 3)
+
+[node name="Interior5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1780364140]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 0, 4.236723)
+operation = 2
+size = Vector3(11.14502, 3, 4)
+
+[node name="Interior6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1767336506]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26, 0, 8)
+operation = 2
+size = Vector3(10, 3, 4)
+
+[node name="Door" type="CSGBox3D" parent="CSGCombiner3D" unique_id=408729360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7487097, 0, 4.1015205)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="Door2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=238504941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.793755, 0, 4.1015205)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="Door3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1860868943]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 29.060385, 0, 5.723051)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="Door4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2108215626]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.767115, 0, -4.069727)
+operation = 2
+size = Vector3(1, 3, 2)
