@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dnndvtq1gaw3f"]
+
+[ext_resource type="Texture2D" uid="uid://baxyb520dd6jh" path="res://Maps/ResidentEvil/1FMap.png" id="1_jf38b"]
+[ext_resource type="Material" uid="uid://bdx34i4tmxqsh" path="res://Materials/meters_on_boxes.tres" id="2_gfqq0"]
+[ext_resource type="PackedScene" uid="uid://hw4ctmcm8g6a" path="res://Tofu/tofu.tscn" id="3_kqwtc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxlwl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_mc5pt"]
+sky_material = SubResource("ProceduralSkyMaterial_jxlwl")
+
+[sub_resource type="Environment" id="Environment_wy6tg"]
+background_mode = 2
+sky = SubResource("Sky_mc5pt")
+glow_enabled = true
+
+[node name="1F-EastWing" type="Node3D" unique_id=1954123137]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1858700673]
+environment = SubResource("Environment_wy6tg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047416612]
+transform = Transform3D(-0.87490094, -0.41941783, 0.24215098, 2.7805948e-08, 0.49999994, 0.86602545, -0.48430198, 0.75768644, -0.43745038, 0, 16.068777, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1700577091]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.1, 0)
+visible = false
+axis = 1
+texture = ExtResource("1_jf38b")
+
+[node name="Tofu" parent="." unique_id=1542248161 instance=ExtResource("3_kqwtc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.978659, 0.89625454, -9.49548)
+
+[node name="PressRoom" type="CSGCombiner3D" parent="." unique_id=426090292]
+use_collision = true
+
+[node name="PressRoomExterior" type="CSGBox3D" parent="PressRoom" unique_id=1419562944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.041, 1.5, -7.887)
+size = Vector3(7.5, 3, 11)
+material = ExtResource("2_gfqq0")
+
+[node name="PressRoomInterior" type="CSGBox3D" parent="PressRoom" unique_id=976813830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.041, 1.41, -7.887)
+operation = 2
+size = Vector3(7.3, 2.8, 10.5)
+material = ExtResource("2_gfqq0")
+
+[node name="PressRoomDoor" type="CSGBox3D" parent="PressRoom" unique_id=530801522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.531, 1.25, -2.433294)
+operation = 2
+size = Vector3(1.5, 2.5, 0.47288817)
+material = ExtResource("2_gfqq0")
+
+[node name="HallWay" type="CSGCombiner3D" parent="." unique_id=663772783]
+use_collision = true
+
+[node name="HallWayExterior" type="CSGBox3D" parent="HallWay" unique_id=735073158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.208961, 1.5, -0.90527344)
+size = Vector3(17, 3, 3)
+material = ExtResource("2_gfqq0")
+
+[node name="HallWayExterior2" type="CSGBox3D" parent="HallWay" unique_id=1790006098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.208961, 1.5, -0.90527344)
+operation = 2
+size = Vector3(16.9, 2.9, 2.9)
+material = ExtResource("2_gfqq0")
+
+[node name="HallWayDoor" type="CSGBox3D" parent="HallWay" unique_id=122787785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.531, 1.25, -2.51571)
+operation = 2
+size = Vector3(1.5, 2.5, 0.32336122)
+material = ExtResource("2_gfqq0")

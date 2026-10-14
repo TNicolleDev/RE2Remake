@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://c3ejgv32vybqh"]
+
+[ext_resource type="Texture2D" uid="uid://baxyb520dd6jh" path="res://Maps/ResidentEvil/1FMap.png" id="1_6nh3q"]
+[ext_resource type="Material" uid="uid://bdx34i4tmxqsh" path="res://Materials/meters_on_boxes.tres" id="2_etbjy"]
+[ext_resource type="PackedScene" uid="uid://hw4ctmcm8g6a" path="res://Tofu/tofu.tscn" id="3_4s7n1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxlwl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_mc5pt"]
+sky_material = SubResource("ProceduralSkyMaterial_jxlwl")
+
+[sub_resource type="Environment" id="Environment_wy6tg"]
+background_mode = 2
+sky = SubResource("Sky_mc5pt")
+glow_enabled = true
+
+[node name="1F-EastWing-FlipFaces" type="Node3D" unique_id=1954123137]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1858700673]
+environment = SubResource("Environment_wy6tg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047416612]
+transform = Transform3D(-0.87490094, -0.41941783, 0.24215098, 2.7805948e-08, 0.49999994, 0.86602545, -0.48430198, 0.75768644, -0.43745038, 0, 16.068777, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1700577091]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.1, 0)
+visible = false
+axis = 1
+texture = ExtResource("1_6nh3q")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1993046447]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1742106348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.454114, 0, 2.6239996)
+flip_faces = true
+size = Vector3(3, 3, 18.249023)
+material = ExtResource("2_etbjy")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2075478983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.203382, 0, -4.404833)
+flip_faces = true
+size = Vector3(4.498535, 3, 4.2368107)
+material = ExtResource("2_etbjy")
+
+[node name="Closet" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2097166560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.971594, 0, -4.4413304)
+flip_faces = true
+size = Vector3(2.7286377, 3, 4.1638155)
+material = ExtResource("2_etbjy")
+
+[node name="Closet2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=476826263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.175936, 0, -4.3466954)
+flip_faces = true
+size = Vector3(5.0913696, 3, 3.9617302)
+material = ExtResource("2_etbjy")
+
+[node name="Closet3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1695182988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.845743, 0, 3.0481963)
+flip_faces = true
+size = Vector3(3.232193, 3, 6.4638214)
+material = ExtResource("2_etbjy")
+
+[node name="ClosetDoor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1901268654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1593685, 0, -2.982652)
+flip_faces = true
+size = Vector3(4.3530884, 3, 1.2464585)
+material = ExtResource("2_etbjy")
+
+[node name="ClosetDoor6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=963998149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.391714, 0, -2.309346)
+flip_faces = true
+size = Vector3(2.4071732, 3, 1.2464585)
+material = ExtResource("2_etbjy")
+
+[node name="ClosetDoor2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1872663981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.580473, 0, -4.884805)
+flip_faces = true
+size = Vector3(0.6896553, 3, 1.7859342)
+material = ExtResource("2_etbjy")
+
+[node name="ClosetDoor3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1342516460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.276243, 0, 4.971666)
+flip_faces = true
+size = Vector3(0.82800925, 3, 1.7859342)
+material = ExtResource("2_etbjy")
+
+[node name="ClosetDoor4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1287925866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.000213, 0, 4.971666)
+flip_faces = true
+size = Vector3(0.82800925, 3, 1.7859342)
+material = ExtResource("2_etbjy")
+
+[node name="ClosetDoor5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1252185525]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 30.567177, 0, 6.3375907)
+flip_faces = true
+size = Vector3(0.82800925, 3, 1.7859342)
+material = ExtResource("2_etbjy")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1595492295]
+transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, 18.642315, 0, -0.89371216)
+flip_faces = true
+size = Vector3(2.8051758, 3, 19.040482)
+material = ExtResource("2_etbjy")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1305008106]
+transform = Transform3D(1, 0, 1.5893256e-08, 0, 1, 0, -1.5893256e-08, 0, 1, 24.132921, 0, -5.5345917)
+flip_faces = true
+size = Vector3(2.8051758, 3, 6.8163595)
+material = ExtResource("2_etbjy")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=775249183]
+transform = Transform3D(1, 0, 1.5893256e-08, 0, 1, 0, -1.5893256e-08, 0, 1, 26.696909, 0, 5.171495)
+flip_faces = true
+size = Vector3(2.7936401, 3, 9.404224)
+material = ExtResource("2_etbjy")
+
+[node name="EastOffice" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1673908740]
+transform = Transform3D(1, 0, 1.5893256e-08, 0, 1, 0, -1.5893256e-08, 0, 1, 18.132109, 0, 5.2476926)
+flip_faces = true
+size = Vector3(14.244308, 3, 9.297415)
+material = ExtResource("2_etbjy")
+
+[node name="EastOffice3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1164866786]
+transform = Transform3D(1, 0, 1.5893256e-08, 0, 1, 0, -1.5893256e-08, 0, 1, 19.081226, 0, -7.909395)
+flip_faces = true
+size = Vector3(6.977337, 3, 11.113044)
+material = ExtResource("2_etbjy")
+
+[node name="EastOffice2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=393983010]
+transform = Transform3D(1, 0, 1.5893256e-08, 0, 1, 0, -1.5893256e-08, 0, 1, 28.717976, 0, 8.122041)
+flip_faces = true
+size = Vector3(5.521078, 3, 3.548719)
+material = ExtResource("2_etbjy")
+
+[node name="Tofu" parent="." unique_id=1542248161 instance=ExtResource("3_4s7n1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.066361, 0, 9.274142)

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://hw4ctmcm8g6a"]
+
+[ext_resource type="Script" uid="uid://cejssr88k5flp" path="res://Tofu/tofu.gd" id="1_hpemb"]
+[ext_resource type="Material" uid="uid://w4wm76dc4kkp" path="res://Materials/Tofu/tofu_material.tres" id="2_h8pv7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qeq5k"]
+size = Vector3(0.6, 1.5, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qeq5k"]
+material = ExtResource("2_h8pv7")
+size = Vector3(0.6, 1.5, 0.6)
+
+[node name="Tofu" type="CharacterBody3D" unique_id=1542248161]
+script = ExtResource("1_hpemb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1786699378]
+shape = SubResource("BoxShape3D_qeq5k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1918256051]
+mesh = SubResource("BoxMesh_qeq5k")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=932155180]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1450898794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
