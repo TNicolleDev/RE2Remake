@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Resident Evil 2"
+<<<<<<< HEAD
 run/main_scene="uid://c3lgt8ukkpicf"
+=======
+run/main_scene="uid://df5urdpjmgw0j"
+>>>>>>> bb3c2d91cba0bbed7ac8030c8d8ba9004c02bc73
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 

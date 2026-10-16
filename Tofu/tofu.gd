@@ -1,16 +1,25 @@
 extends CharacterBody3D
 
 @export var speed:float = 3.0
-@export var aim_sensitivity: float = 0.001
+
+
 @export var jump_velocity: float = 5.0
-
-@onready var camera_pivot: Node3D = $CameraPivot
-
-
 
 
 
 var mouse_motion:= Vector2.ZERO
+
+
+
+@onready var camera_pivot: Node3D = $CameraPivot
+var mouse_motion:= Vector2.ZERO
+
+
+
+@onready var ray_cast_3d: RayCast3D = $CameraPivot/RayCast3D
+
+@export var aim_sensitivity: float = 0.001
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -44,11 +53,20 @@ func _input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			# relative is the position "relative" to the previous mouse position. It's negative because we want our mouse to move in the direction we are moving it.
 			mouse_motion = -event.relative *  aim_sensitivity
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-
+		return
+	if event.is_action_pressed("ui_cancel") and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		var collider = ray_cast_3d.get_collider()
+		printt("collider: ", collider)
+		if collider is Interactable:
+			collider.interact()
+	
 
 func handle_camera_rotation()-> void:
 	rotate_y(mouse_motion.x)
