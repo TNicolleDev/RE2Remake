@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://baxyb520dd6jh" path="res://Maps/ResidentEvil/1FMap.png" id="1_jf38b"]
 [ext_resource type="Material" uid="uid://bdx34i4tmxqsh" path="res://Materials/meters_on_boxes.tres" id="2_gfqq0"]
 [ext_resource type="PackedScene" uid="uid://hw4ctmcm8g6a" path="res://Tofu/tofu.tscn" id="3_kqwtc"]
+[ext_resource type="PackedScene" uid="uid://blyhh6q45kpi5" path="res://Prototypes/ResidentEvil/east_office.tscn" id="4_gfqq0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxlwl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,50 +26,102 @@ environment = SubResource("Environment_wy6tg")
 transform = Transform3D(-0.87490094, -0.41941783, 0.24215098, 2.7805948e-08, 0.49999994, 0.86602545, -0.48430198, 0.75768644, -0.43745038, 0, 16.068777, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1700577091]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.1, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.2, 0)
 visible = false
 axis = 1
 texture = ExtResource("1_jf38b")
 
 [node name="Tofu" parent="." unique_id=1542248161 instance=ExtResource("3_kqwtc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.978659, 0.89625454, -9.49548)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.780675, 1.478369, -2.651843)
 
-[node name="PressRoom" type="CSGCombiner3D" parent="." unique_id=426090292]
+[node name="VeryImportantPlane" type="CSGBox3D" parent="." unique_id=463616273]
+material_override = ExtResource("2_gfqq0")
+use_collision = true
+size = Vector3(79, 0.2, 53)
+
+[node name="Hallways" type="CSGCombiner3D" parent="." unique_id=277969786]
 use_collision = true
 
-[node name="PressRoomExterior" type="CSGBox3D" parent="PressRoom" unique_id=1419562944]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.041, 1.5, -7.887)
-size = Vector3(7.5, 3, 11)
+[node name="EastHallExterior" type="CSGBox3D" parent="Hallways" unique_id=232337913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396, 1.5, 2.69)
+size = Vector3(3, 3, 19)
 material = ExtResource("2_gfqq0")
 
-[node name="PressRoomInterior" type="CSGBox3D" parent="PressRoom" unique_id=976813830]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.041, 1.41, -7.887)
+[node name="EastHallAttachmentExterior" type="CSGBox3D" parent="Hallways" unique_id=797688960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.565336, 1.5, -3.0632606)
+size = Vector3(2, 3, 7.5)
+material = ExtResource("2_gfqq0")
+
+[node name="CenterHallExterior" type="CSGBox3D" parent="Hallways" unique_id=960866637]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.15431, 1.5, -0.77340025)
+size = Vector3(2.868164, 3, 15.799927)
+material = ExtResource("2_gfqq0")
+
+[node name="WestHallExterior" type="CSGBox3D" parent="Hallways" unique_id=243105540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.702333, 1.5, 3.8158712)
+size = Vector3(2.9882813, 3, 12.064972)
+material = ExtResource("2_gfqq0")
+
+[node name="SouthHallExterior" type="CSGBox3D" parent="Hallways" unique_id=577090773]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.256126, 1.5, 8.154508)
+size = Vector3(3.371582, 3, 6.053318)
+material = ExtResource("2_gfqq0")
+
+[node name="EastHallInterior" type="CSGBox3D" parent="Hallways" unique_id=1476349562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396, 1.5, 2.69)
 operation = 2
-size = Vector3(7.3, 2.8, 10.5)
+size = Vector3(2.8, 2.8, 18.8)
 material = ExtResource("2_gfqq0")
 
-[node name="PressRoomDoor" type="CSGBox3D" parent="PressRoom" unique_id=530801522]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.531, 1.25, -2.433294)
+[node name="EastHallAttachmentInterior" type="CSGBox3D" parent="Hallways" unique_id=1886367906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.565336, 1.5, -3.0632606)
 operation = 2
-size = Vector3(1.5, 2.5, 0.47288817)
+size = Vector3(1.8, 2.8, 7.3)
 material = ExtResource("2_gfqq0")
 
-[node name="HallWay" type="CSGCombiner3D" parent="." unique_id=663772783]
-use_collision = true
-
-[node name="HallWayExterior" type="CSGBox3D" parent="HallWay" unique_id=735073158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.208961, 1.5, -0.90527344)
-size = Vector3(17, 3, 3)
-material = ExtResource("2_gfqq0")
-
-[node name="HallWayExterior2" type="CSGBox3D" parent="HallWay" unique_id=1790006098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.208961, 1.5, -0.90527344)
+[node name="CenterHallInterior" type="CSGBox3D" parent="Hallways" unique_id=1475077871]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.15431, 1.5, -0.77340025)
 operation = 2
-size = Vector3(16.9, 2.9, 2.9)
+size = Vector3(2.8, 2.8, 15.8)
 material = ExtResource("2_gfqq0")
 
-[node name="HallWayDoor" type="CSGBox3D" parent="HallWay" unique_id=122787785]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.531, 1.25, -2.51571)
+[node name="WestHallInterior" type="CSGBox3D" parent="Hallways" unique_id=252664191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.702333, 1.5, 3.8158712)
 operation = 2
-size = Vector3(1.5, 2.5, 0.32336122)
+size = Vector3(2.8, 2.8, 11)
 material = ExtResource("2_gfqq0")
+
+[node name="SouthHallInterior" type="CSGBox3D" parent="Hallways" unique_id=164998084]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.256126, 1.5, 8.154508)
+operation = 2
+size = Vector3(3.1, 2.8, 6.053)
+material = ExtResource("2_gfqq0")
+
+[node name="EastHallDoorToOffice" type="CSGBox3D" parent="Hallways" unique_id=1735233251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.846714, 1.3922874, 3.33847)
+operation = 2
+size = Vector3(1, 3, 2)
+material = ExtResource("2_gfqq0")
+
+[node name="WestHallDoorToOffice" type="CSGBox3D" parent="Hallways" unique_id=2091013939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.282692, 1.2812911, 4.7469826)
+operation = 2
+size = Vector3(1, 2.46875, 1.5029068)
+material = ExtResource("2_gfqq0")
+
+[node name="CenterHallDoorToPressRoom" type="CSGBox3D" parent="Hallways" unique_id=974224254]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.256983, 1.2820034, -2.217421)
+operation = 2
+size = Vector3(1, 2.4525757, 1.5153809)
+material = ExtResource("2_gfqq0")
+
+[node name="SouthHallDoorToKey" type="CSGBox3D" parent="Hallways" unique_id=200970092]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.45406, 1.2670845, 6.4930067)
+operation = 2
+size = Vector3(1, 2.3875732, 1.2668457)
+material = ExtResource("2_gfqq0")
+
+[node name="Rooms" type="CSGCombiner3D" parent="." unique_id=1260683542]
+
+[node name="CSGBox3D" parent="Rooms" unique_id=403537923 instance=ExtResource("4_gfqq0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.642578, 0, 5.2150664)

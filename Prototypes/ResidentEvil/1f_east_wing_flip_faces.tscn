@@ -137,3 +137,4 @@ material = ExtResource("2_etbjy")
 
 [node name="Tofu" parent="." unique_id=1542248161 instance=ExtResource("3_4s7n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.066361, 0, 9.274142)
+aim_sensitivity = 0.001
