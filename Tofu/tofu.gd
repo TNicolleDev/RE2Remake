@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 var mouse_motion:= Vector2.ZERO
 
 @export var aim_sensitivity: float = 0.005
+@onready var ray_cast_3d: RayCast3D = $CameraPivot/RayCast3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -40,9 +41,19 @@ func _input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			# relative is the position "relative" to the previous mouse position. It's negative because we want our mouse to move in the direction we are moving it.
 			mouse_motion = -event.relative *  aim_sensitivity
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		return
+	if event.is_action_pressed("ui_cancel") and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		var collider = ray_cast_3d.get_collider()
+		printt("collider: ", collider)
+		if collider is Interactable:
+			collider.interact()
 	
 
 func handle_camera_rotation()-> void:
