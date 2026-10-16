@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://wb3akhk54cf6"]
+
+[ext_resource type="Material" uid="uid://w6qssmhhh8nm" path="res://Materials/floor.tres" id="1_jltub"]
+[ext_resource type="Material" uid="uid://bdx34i4tmxqsh" path="res://Materials/meters_on_boxes.tres" id="2_cb2uj"]
+[ext_resource type="PackedScene" uid="uid://hw4ctmcm8g6a" path="res://Tofu/tofu.tscn" id="3_sfkf4"]
+[ext_resource type="PackedScene" uid="uid://bmopk2yat1vgb" path="res://Props/Classroom/class_room_door.tscn" id="4_cb2uj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jltub"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_cb2uj"]
+sky_material = SubResource("ProceduralSkyMaterial_jltub")
+
+[sub_resource type="Environment" id="Environment_sfkf4"]
+background_mode = 2
+sky = SubResource("Sky_cb2uj")
+glow_enabled = true
+
+[node name="ClassRoom" type="Node3D" unique_id=190655116]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1311089773]
+environment = SubResource("Environment_sfkf4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=882698497]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1592480122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+material_override = ExtResource("2_cb2uj")
+use_collision = true
+size = Vector3(20, 0.1, 20)
+material = ExtResource("1_jltub")
+
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=1944776118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.745, 0)
+visible = false
+material_override = ExtResource("2_cb2uj")
+use_collision = true
+size = Vector3(20, 0.5, 20)
+material = ExtResource("1_jltub")
+
+[node name="Halls" type="CSGCombiner3D" parent="." unique_id=36960829]
+use_collision = true
+
+[node name="LeftHall" type="CSGBox3D" parent="Halls" unique_id=747790999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+size = Vector3(5, 3, 20)
+material = ExtResource("2_cb2uj")
+
+[node name="TopHall" type="CSGBox3D" parent="Halls" unique_id=1947548367]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -7.5)
+size = Vector3(5, 3, 20)
+material = ExtResource("2_cb2uj")
+
+[node name="LeftHallInterior" type="CSGBox3D" parent="Halls" unique_id=932166534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+operation = 2
+size = Vector3(4, 3, 19)
+material = ExtResource("2_cb2uj")
+
+[node name="TopHallInterior" type="CSGBox3D" parent="Halls" unique_id=1008353661]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -7.5)
+operation = 2
+size = Vector3(4, 3, 19)
+material = ExtResource("2_cb2uj")
+
+[node name="TopHallBathroomDoor" type="CSGBox3D" parent="Halls" unique_id=1093327875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5.25)
+operation = 2
+size = Vector3(1.5, 3, 1)
+material = ExtResource("2_cb2uj")
+
+[node name="TopHallClassRoomDoor" type="CSGBox3D" parent="Halls" unique_id=352795376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -5.25)
+operation = 2
+size = Vector3(1.5, 3, 1)
+material = ExtResource("2_cb2uj")
+
+[node name="ExitDoorKeyRequired" type="CSGBox3D" parent="Halls" unique_id=1303902218]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.75, 0, 6.3415585)
+operation = 2
+size = Vector3(1.5, 3, 1)
+material = ExtResource("2_cb2uj")
+
+[node name="Bathroom" type="CSGCombiner3D" parent="." unique_id=372436660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -0.5)
+use_collision = true
+
+[node name="BathroomExterior" type="CSGBox3D" parent="Bathroom" unique_id=442371074]
+material_override = ExtResource("2_cb2uj")
+size = Vector3(5, 3, 10)
+material = ExtResource("2_cb2uj")
+
+[node name="BathroomInterior" type="CSGBox3D" parent="Bathroom" unique_id=94572110]
+operation = 2
+size = Vector3(4, 3, 9)
+material = ExtResource("2_cb2uj")
+
+[node name="Door" type="CSGBox3D" parent="Bathroom" unique_id=906972722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.75)
+operation = 2
+size = Vector3(1.5, 3, 1)
+material = ExtResource("2_cb2uj")
+
+[node name="ClassRoom" type="CSGCombiner3D" parent="." unique_id=916064383]
+use_collision = true
+
+[node name="ClassRoomExterior" type="CSGBox3D" parent="ClassRoom" unique_id=1476401504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.25)
+material_override = ExtResource("2_cb2uj")
+size = Vector3(11, 3, 15.5)
+material = ExtResource("2_cb2uj")
+
+[node name="ClassRoomInterior" type="CSGBox3D" parent="ClassRoom" unique_id=1188872930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.25)
+material_override = ExtResource("2_cb2uj")
+operation = 2
+size = Vector3(10, 3, 14.5)
+material = ExtResource("2_cb2uj")
+
+[node name="ClassRoomDoor" type="CSGBox3D" parent="ClassRoom" unique_id=99934017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -5.25)
+operation = 2
+size = Vector3(1.5, 3, 1)
+material = ExtResource("2_cb2uj")
+
+[node name="Tofu" parent="." unique_id=1542248161 instance=ExtResource("3_sfkf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.017168, 0.9328636, 0)
+
+[node name="Doors" type="Node3D" parent="." unique_id=2110303225]
+
+[node name="DoorToClassRoom" parent="Doors" unique_id=1041261534 instance=ExtResource("4_cb2uj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.5, -1.45, -5.25)
+
+[node name="DoorToWashRoom" parent="Doors" unique_id=1341724844 instance=ExtResource("4_cb2uj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.45, -5.25)
+
+[node name="DoorToWashRoom2" parent="Doors" unique_id=619927079 instance=ExtResource("4_cb2uj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.75, -1.45, 6.35)
